@@ -1,0 +1,613 @@
+@import "fonts.css";
+
+:root {
+   --primary: #f9a684;
+   --bg: white;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   outline: none;
+   border: none;
+   text-decoration: none;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   font-family: "CormorantGaramond";
+   background-color: var(--primary);
+   color: white;
+}
+
+.navbar {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1.4rem 7%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 9999;
+}
+
+.navbar .navbar-logo {
+   font-size: 1rem;
+   font-weight: 700;
+   color: white;
+   font-style: italic;
+}
+
+.navbar .navbar-logo span {
+   color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+   color: white;
+   display: inline-block;
+   font-size: 1rem;
+   margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+   color: var(--primary);
+}
+
+.navbar .navbar-extra a {
+   color: white;
+   margin: 0 0.3rem;
+}
+
+.navbar .navbar-extra a:hover {
+   color: var(--primary);
+}
+
+/*Hero Section*/
+.hero {
+   min-height: 115vh;
+   display: flex;
+   align-items: center;
+   background-image: url("../img/home.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   position: relative;
+}
+
+.hero::after {
+   content: "";
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 20%;
+   bottom: 0;
+}
+
+.hero .content {
+   padding: 1.4rem 7%;
+   max-width: 60rem;
+}
+
+.hero .content h1 {
+   font-size: 7em;
+   color: white;
+   text-shadow: 1px 1px 3px rgba(1, 1, 2, 0.5);
+   line-height: 1.2;
+}
+
+.hero .content h1 span {
+   color: var(--bg);
+   position: relative;
+   display: inline-block;
+   left: 150px;
+}
+
+.hero .content p {
+   font-size: 0.9rem;
+   margin-top: 2rem;
+   line-height: 1.6;
+   max-width: 600px;
+   font-family: "Poppins", serif;
+   color: #fff;
+}
+
+.hero .content .cta {
+   margin-top: 1rem;
+   display: inline-block;
+   padding: 1rem 3rem;
+   font-size: 1.4rem;
+   color: white;
+   background-color: var(--primary);
+   border-radius: 0.5rem;
+   box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+/* About Section */
+.about,
+.desc,
+.contact {
+   padding-inline: 7%;
+   padding-block: 3rem 6rem;
+   background: linear-gradient(90deg, #b49c89, #50462f);
+}
+
+.about h2,
+.desc h2,
+.contact h2 {
+   text-align: center;
+   font-size: 2.6rem;
+   margin-block: 3rem;
+   font-family: "Cormorant";
+}
+
+.about h3 span {
+   font-family: "Corinthia";
+   color: var(--primary);
+}
+
+.about .row {
+   display: flex;
+   gap: 10px;
+   align-items: center;
+}
+
+.about .row .about-img {
+   flex: 1 1 50rem;
+   max-width: 100%;
+}
+
+.about .row .about-img img {
+   width: 65%;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   border-top-left-radius: 50%;
+   border-top-right-radius: 50%;
+}
+
+.about .row .content {
+   flex: 1 1 35rem;
+   padding: 0 3rem;
+   max-width: 600px;
+}
+
+.about .row .content h3 {
+   font-size: 3rem;
+   margin-bottom: 20px;
+}
+
+.about .row .content p {
+   margin-bottom: 0.8rem;
+   font-size: 1rem;
+   line-height: 1.6;
+   font-family: "Poppins";
+   text-align: justify;
+}
+
+/* desc Section */
+.desc h2 {
+   margin-bottom: 1rem;
+}
+
+.desc p {
+   text-align: center;
+   max-width: 30rem;
+   margin: auto;
+   font-weight: 100;
+   line-height: 1.6;
+   font-family: "Poppins";
+}
+
+.desc .row {
+   display: flex;
+   flex-wrap: wrap;
+   margin-top: 5rem;
+   justify-content: center;
+}
+
+.desc .row .desc-card,
+.desc .row .desc-card2 {
+   text-align: center;
+   padding-bottom: 5rem;
+}
+
+.desc .row .desc-card img {
+   border-radius: 50%;
+   width: 80%;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+   transition: box-shadow 0.3s ease;
+}
+
+.desc .row .desc-card2 img {
+   object-fit: cover;
+   aspect-ratio: 1/ 1;
+   border-radius: 2%;
+   width: 80%;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+   transition: box-shadow 0.3s ease;
+}
+
+.desc .row .desc-card img:hover,
+.desc .row .desc-card2 img:hover {
+   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+.desc .row .desc-card .desc-card-title,
+.desc .row .desc-card2 .desc-card-title {
+   margin: 1rem auto 0.5rem;
+   text-align: center;
+}
+
+.desc-card:is(.sub-menu) img {
+   aspect-ratio: 1 / 1;
+   object-fit: cover;
+}
+.desc-card2:is(.product-recommendation) {
+   width: 25%;
+}
+
+.product-recommendation img:is(.desc-card-title) {
+   width: min(100%, 240px);
+   height: auto;
+}
+
+.desc .row .desc-card {
+   color: #fff;
+}
+
+/* about section 2 */
+.skin {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 100vh;
+   padding: 4rem 10% 2rem;
+   background: linear-gradient(90deg, #b49c89, #50462f);
+}
+
+.text-skin {
+   display: flex;
+   flex-direction: row;
+   max-width: 70%;
+   position: relative;
+   gap: 0.75rem;
+}
+
+.skin .heading-text {
+   display: flex;
+   flex-direction: column;
+}
+
+.text-skin > .title {
+   font-size: 3rem;
+
+   display: flex;
+   align-items: center;
+   column-gap: 0.75rem;
+
+   transform: translateY(-50%);
+}
+
+.text-skin > .title > div {
+   width: max-content;
+   display: flex;
+   flex-direction: column;
+   row-gap: 1rem;
+   align-items: center;
+}
+
+.text-skin > .title > div span:nth-child(2) {
+   width: 100%;
+   height: 2px;
+   background-color: white;
+}
+
+.text-skin p {
+   font-size: 18px;
+   line-height: 1.4;
+   text-align: justify;
+   font-family: "Poppins";
+}
+
+.image-skin {
+   width: 28%; /* Adjusted image content width */
+}
+
+.skin .image-shadow {
+   width: 100%;
+   height: auto;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   transition: box-shadow 0.3s ease;
+}
+
+.card-skinpedia img {
+   width: 50px;
+   aspect-ratio: 1 / 1;
+   object-fit: cover;
+   margin-bottom: 0.5rem;
+}
+
+/* Type section */
+.container2 {
+   width: 100%;
+   margin: 0 auto;
+   height: 100vh;
+   padding: 4rem 10% 1.4rem;
+   background: linear-gradient(90deg, #b49c89, #50462f);
+}
+
+table {
+   width: 100%;
+   border-collapse: collapse;
+   margin: 20px 0;
+   text-align: center;
+}
+
+.skin-type-header,
+.description-header {
+   text-align: center;
+   padding: 10px;
+   padding-bottom: 2rem;
+   font-weight: bold;
+   font-size: 20px;
+}
+
+tbody tr {
+   border-bottom: 1px solid var(--primary);
+}
+
+.image-cell {
+   width: 100px;
+   padding: 10px;
+   text-align: center;
+}
+
+.image-cell img {
+   width: 100px;
+   height: 100px;
+   display: block;
+   margin: 10px 10px 10px;
+   border-radius: 5px;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+   margin-left: 100%;
+}
+
+.text-cell {
+   width: 200px;
+   padding: 10px;
+   text-align: center;
+}
+
+.text-cell h2 {
+   margin: 0;
+   font-size: 18px;
+}
+
+.description-cell {
+   padding: 10px;
+   text-align: justify;
+}
+
+.description-cell p {
+   margin: 0;
+   font-family: "Poppins";
+}
+
+/* pedia section */
+.container3 {
+   width: 100%;
+   margin: 0 auto;
+   text-align: center;
+   padding: 5rem 10% 1.4rem;
+   background: linear-gradient(90deg, #b49c89, #50462f);
+}
+
+.container3 h1 {
+   font-size: 50px;
+   margin-bottom: 20px;
+}
+
+.container3 .skinpedia {
+   font-family: "Corinthia";
+   font-size: 80px;
+   color: var(--primary);
+   margin-right: 10px;
+}
+
+.card-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 20px;
+}
+
+.card {
+   background-color: white;
+   width: 45%;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+   text-align: left;
+   transition: transform 0.3s;
+   margin-bottom: 20px;
+}
+
+.card:hover {
+   transform: translateY(-10px);
+}
+
+.icon img {
+   margin-bottom: 10px;
+}
+
+.card h2 {
+   font-size: 26px;
+   color: var(--primary);
+   margin-bottom: 10px;
+}
+
+.card p {
+   font-size: 16px;
+   color: var(--primary);
+   font-family: "Poppins";
+   text-align: justify;
+}
+
+/* contact section */
+
+.contact .row form {
+   flex: 1 1 15rem;
+   padding: 2rem 1rem;
+   text-align: center;
+}
+
+.contact h2 {
+   padding-top: 4rem;
+}
+
+form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.form-group {
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   margin-bottom: 1rem;
+}
+
+:is(input, textarea) {
+   padding: 10px;
+   width: 200px;
+   border: 1px solid #ccc;
+   font-family: "Poppins";
+}
+
+:is(input, textarea, #submit) {
+   border-radius: 0.375rem;
+}
+
+:is(textarea, .form-group + #submit) {
+   width: 410px !important;
+}
+
+button {
+   padding: 10px 20px;
+   background-color: #f5f5f5;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-family: "Poppins";
+}
+
+button:hover {
+   background-color: var(--primary);
+}
+
+/* footer */
+
+footer {
+   background-color: #4e3116;
+   color: white;
+   padding: 40px 20px;
+   text-align: left;
+}
+
+.footer-container {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.footer-section {
+   flex: 1;
+   min-width: 200px;
+   margin-bottom: 20px;
+}
+
+.footer-section a {
+   text-decoration: none;
+   color: var(--bg);
+
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+}
+
+.footer-section h3 {
+   margin-bottom: 20px;
+   font-size: 18px;
+}
+
+.footer-section ul {
+   list-style: none;
+   padding: 0;
+}
+
+.footer-section ul li {
+   margin-bottom: 10px;
+   display: flex;
+   align-items: center;
+   color: white;
+   font-family: "Poppins";
+}
+
+.footer-section li:hover {
+   color: var(--primary);
+}
+
+.footer-bottom {
+   display: flex;
+   justify-content: space-between;
+   border-top: 1px solid #ccc;
+   padding-top: 20px;
+}
+
+.footer-bottom .privacy-links {
+   text-align: right;
+}
+
+.footer-bottom a {
+   color: white;
+   text-decoration: none;
+}
+
+.footer-bottom a:hover {
+   text-decoration: underline;
+}
+
+/*Media Queries*/
+
+/*Laptop*/
+@media (max-width: 1366px) {
+   html {
+      font-size: 75%;
+   }
+}
+
+/*Tablet*/
+@media (max-width: 768px) {
+   html {
+      font-size: 62%;
+   }
+}
+
+.underline {
+   border-bottom: 1px solid #fff;
+}
+
+.backdrop-blur {
+   backdrop-filter: blur(90px);
+   text-shadow: 1px 1px #000;
+}
+
+.navbar:is(.backdrop-blur) .navbar-nav a:hover {
+   text-shadow: none;
+}

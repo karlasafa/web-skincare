@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Ourskinpedia</title>
+
+      <!-- My CSS -->
+      <link rel="stylesheet" href="assets/css/style.css" />
+   </head>
+   <body>
+      <!-- navbar start -->
+      <nav class="navbar">
+         <a href="#" class="navbar-logo"> Our <span>Skinpedia</span>. </a>
+
+         <div class="navbar-nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#desc">Skincare</a>
+            <a href="#contact">Contact</a>
+         </div>
+      </nav>
+      <!-- navbar end -->
+
+      <!-- Hero Section start  -->
+      <section class="hero" id="home">
+         <main class="content">
+            <h1>Healty<br /><span>Glow</span></h1>
+            <p>Skincare adalah produk perawatan kulit yang tujuannya bermacam-macam seperti dari menenangkan, memulihkan, memperbaiki, hingga melindungi kulit. Perawatan kulit yang satu ini penting dilakukan untuk menjaga penampilan, kesehatan kulit saat ini dan sebagai investasi jangka panjang.</p>
+         </main>
+      </section>
+      <!-- Hero Section end  -->
+
+      <!-- About Section start -->
+      <section id="about" class="about">
+         <h2><span>Informasi</span> Skincare</h2>
+         <div class="row">
+            <div class="about-img">
+               <img src="assets/img/about.jpg" alt="Tentang Kami" />
+            </div>
+            <div class="content">
+               <h3><span>Our </span> Philosophy</h3>
+               <p>Skincare merupakan pandangan menyeluruh tentang perawatan kulit yang menggabungkan berbagai prinsip dan pemikiran. Inti dari filosofi ini adalah keyakinan bahwa pencegahan lebih baik daripada pengobatan, mendorong perawatan rutin untuk menjaga kesehatan kulit sebelum masalah muncul.</p>
+               <p>Skincare juga dipandang secara holistik, mengaitkan kesehatan kulit dengan kesehatan tubuh secara keseluruhan dan mempertimbangkan faktor-faktor seperti gaya hidup, diet, dan tingkat stres.</p>
+            </div>
+         </div>
+      </section>
+      <!-- About Section end -->
+
+      <!-- desc Section start -->
+      <section id="desc" class="desc">
+         <h2>Skin Care</h2>
+         <div class="row">
+            <a class="desc-card sub-menu" href="skintype.html">
+               <img src="assets/img/daftar/skintypes.png" alt="Skin Types" class="desc-card-title" />
+               <h3 class="desc-card-title">Skin of Types</h3>
+            </a>
+            <a class="desc-card sub-menu" href="skinpedia.html">
+               <img src="assets/img/daftar/skincare.png" alt="Skincare" class="desc-card-title" />
+               <h3 class="desc-card-title">Skinpedia</h3>
+            </a>
+            <a class="desc-card sub-menu" href="produk.html">
+               <img src="assets/img/daftar/rekomendasi.png" alt="Product Recommendations" class="desc-card-title" />
+               <h3 class="desc-card-title">Product Recommendations</h3>
+            </a>
+         </div>
+      </section>
+      <!-- desc Sectiob end -->
+
+      <!-- contact section start -->
+      <section id="contact" class="contact">
+         <h2>Berikan Kritik dan Saran</h2>
+         <div class="row">
+            <form method="post" action="" name="contact-form">
+               <div class="form-group">
+                  <input type="text" id="name" name="name" placeholder="Name" required />
+                  <input type="email" id="email" name="email" placeholder="Email" required />
+               </div>
+               <div class="form-group">
+                  <textarea name="kritik" id="kritik" placeholder="Kritik" rows="5" required></textarea>
+               </div>
+               <div class="form-group">
+                  <textarea name="saran" id="saran" placeholder="Saran" rows="5" required></textarea>
+               </div>
+               <button type="submit" value="Submit" id="submit">Kirim</button>
+            </form>
+         </div>
+      </section>
+      <!-- contact section end -->
+
+      <!-- footer start -->
+      <footer></footer>
+      <!-- footer end -->
+
+      <script src="assets/js/script.js"></script>
+      <script src="assets/lib/sweetalert2/js/sweetalert2.all.min.js"></script>
+      <script>
+         const spreadsheetAPI = "https://script.google.com/macros/s/AKfycby1OPz_23iBI0SR0z1Q6bSf6NbLPiXbK6cBfHZQfob0Feho4B5LVjixsg26qznAvB0B/exec";
+         const form = document.forms["contact-form"];
+
+         form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            Swal.fire({
+               title: "Kirim feedback?",
+               text: "Tindakan ini tidak bisa dibatalkan",
+               confirmButtonColor: "#f9a684",
+               showCancelButton: true,
+               showLoaderOnConfirm: true,
+               preConfirm: async function () {
+                  try {
+                     const response = await fetch(spreadsheetAPI, {
+                        method: "POST",
+                        body: new FormData(form),
+                     });
+
+                     if (!response.ok) {
+                        return Swal.showValidationMessage(`${JSON.stringify(await response.json())}`);
+                     }
+
+                     return response.json();
+                  } catch (error) {
+                     Swal.showValidationMessage(`Request Failed: ${error}`);
+                  }
+               },
+               allowOutsideClick: function () {
+                  !Swal.isLoading();
+               },
+            }).then(function (result) {
+               if (result.isConfirmed) {
+                  Swal.fire({
+                     title: "Feedback berhasil dikirim!",
+                     text: "Terima Kasih atas Kritik dan Sarannya!",
+                     icon: "success",
+                     confirmButtonColor: "#f9a684",
+                  });
+
+                  form.reset();
+               }
+            });
+         });
+      </script>
+   </body>
+</html>

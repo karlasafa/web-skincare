@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Skinpedia</title>
+
+      <link rel="stylesheet" href="assets/css/style.css" />
+   </head>
+   <body>
+      <!-- navbar start -->
+      <nav class="navbar">
+         <a href="#" class="navbar-logo">
+            Our <span>Skinpedia</span>.
+         </a>
+
+         <div class="navbar-nav">
+            <a href="index.html">Home</a>
+            <a href="#spedia">Skinpedia</a>
+         </div>
+      </nav>
+
+      <!-- pedia Section start -->
+      <section id="spedia" class="container3">
+         <h1>
+            <span class="skinpedia">skinpedia</span> JENIS-JENIS SKINCARE
+         </h1>
+         <div class="card-container" id="skinPedias"></div>
+      </section>
+      <!-- pedia Section end -->
+
+      <!-- footer start -->
+      <footer></footer>
+      <!-- footer end -->
+
+      <script src="assets/js/script.js"></script>
+      <script>
+         spedias.forEach(function (spedia) {
+            document.querySelector("#skinPedias").innerHTML += `
+               <div class="card card-skinpedia">
+                  <img src="${spedia.img}" alt="${spedia.name}" class="icon" />
+                  <h2>${spedia.name}</h2>
+                  <p>${spedia.description}</p>
+               </div>
+            `;
+         });
+      </script>
+   </body>
+</html>

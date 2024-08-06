@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Product Recommendations</title>
+
+      <!--  -->
+      <link rel="stylesheet" href="assets/css/style.css" />
+   </head>
+   <body>
+      <!-- navbar start -->
+      <nav class="navbar">
+         <a href="#" class="navbar-logo"> Our <span>Skinpedia</span>. </a>
+
+         <div class="navbar-nav">
+            <a href="index.html">Home</a>
+            <a href="#Normal">Normal</a>
+            <a href="#Dry">Dry</a>
+            <a href="#Oily">Oily</a>
+            <a href="#Sensitive">Sensitive</a>
+         </div>
+      </nav>
+
+      <div id="productRecommendations"></div>
+
+      <!-- footer start -->
+      <footer></footer>
+      <!-- footer end -->
+
+      <script src="assets/js/script.js"></script>
+      <script>
+         let productCategories = [];
+
+         products.forEach((product) => productCategories.push(product.category));
+
+         productCategories = new Set(productCategories);
+
+         productCategories.forEach(function (category) {
+            document.querySelector("#productRecommendations").innerHTML += `
+               <section id="${category}" class="desc">
+                  <h2><span>Daftar</span> Produk ${category}</h2>
+                  <div class="row" id="${category}-products"></div>
+               </section>
+            `;
+         });
+
+         function setProducts(product) {
+            return `
+               <div class="desc-card2 product-recommendation">
+                  <a href="${product.link}" target="_blank">
+                     <img src="${product.img}" alt="${product.name}" class="desc-card-title"/>
+                  </a>
+                  <h3 class="desc-card-title">${product.name}</h3>
+                  <p class="desc-card-title">${product.description}</p>
+               </div>
+            `;
+         }
+
+         function insertProduct(data) {
+            return `INSERT INTO products VALUES (null, '${data.productName}', ${data.categoryid}, '${data.productDesc}', ${data.productPrice})`;
+         }
+
+         insertProduct()
+
+
+
+
+         products.forEach(function (product) {
+            if (product.category == "Normal") {
+               document.querySelector("#Normal-products").innerHTML += setProducts(product);
+            } else if (product.category == "Dry") {
+               document.querySelector("#Dry-products").innerHTML += setProducts(product);
+            } else if (product.category == "Oily") {
+               document.querySelector("#Oily-products").innerHTML += setProducts(product);
+            } else if (product.category == "Sensitive") {
+               document.querySelector("#Sensitive-products").innerHTML += setProducts(product);
+            }
+         });
+      </script>
+   </body>
+</html>

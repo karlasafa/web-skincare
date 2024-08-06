@@ -1,0 +1,111 @@
+@font-face {
+   font-family: "Corinthia";
+   font-style: normal;
+   font-weight: 400;
+   src: url("../fonts/Corinthia/Corinthia-Regular.ttf");
+}
+
+@font-face {
+   font-family: "Corinthia";
+   font-style: normal;
+   font-weight: 700;
+   src: url("../fonts/Corinthia/Corinthia-Bold.ttf");
+}
+
+@font-face {
+   font-family: "CormorantGaramond";
+   font-style: normal;
+   font-weight: 300;
+   src: url("../fonts/CormorantGaramond/CormorantGaramond-Light.ttf");
+}
+
+@font-face {
+   font-family: "CormorantGaramond";
+   font-style: italic;
+   font-weight: 300;
+   src: url("../fonts/CormorantGaramond/CormorantGaramond-Light.ttf");
+}
+
+@font-face {
+   font-family: "CormorantGaramond";
+   font-style: normal;
+   font-weight: 400;
+   src: url("../fonts/CormorantGaramond/CormorantGaramond-Regular.ttf");
+}
+
+@font-face {
+   font-family: "CormorantGaramond";
+   font-style: normal;
+   font-weight: 500;
+   src: url("../fonts/CormorantGaramond/CormorantGaramond-Medium.ttf");
+}
+
+@font-face {
+   font-family: "CormorantGaramond";
+   font-style: italic;
+   font-weight: 500;
+   src: url("../fonts/CormorantGaramond/CormorantGaramond-MediumItalic.ttf");
+}
+
+@font-face {
+   font-family: "CormorantGaramond";
+   font-style: normal;
+   font-weight: 600;
+   src: url("../fonts/CormorantGaramond/CormorantGaramond-SemiBold.ttf");
+}
+
+@font-face {
+   font-family: "CormorantGaramond";
+   font-style: italic;
+   font-weight: 600;
+   src: url("../fonts/CormorantGaramond/CormorantGaramond-SemiBoldItalic.ttf");
+}
+
+@font-face {
+   font-family: "CormorantGaramond";
+   font-style: normal;
+   font-weight: 700;
+   src: url("../fonts/CormorantGaramond/CormorantGaramond-Bold.ttf");
+}
+
+@font-face {
+   font-family: "CormorantGaramond";
+   font-style: italic;
+   font-weight: 700;
+   src: url("../fonts/CormorantGaramond/CormorantGaramond-BoldItalic.ttf");
+}
+
+@font-face {
+   font-family: "Poppins";
+   font-style: normal;
+   font-weight: 100;
+   src: url("../fonts/Poppins/Poppins-Thin.ttf");
+}
+
+@font-face {
+   font-family: "Poppins";
+   font-style: italic;
+   font-weight: 100;
+   src: url("../fonts/Poppins/Poppins-ThinItalic.ttf");
+}
+
+@font-face {
+   font-family: "Poppins";
+   font-style: normal;
+   font-weight: 400;
+   src: url("../fonts/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+   font-family: "Poppins";
+   font-style: normal;
+   font-weight: 700;
+   src: url("../fonts/Poppins/Poppins-Bold.ttf");
+}
+
+@font-face {
+   font-family: "Poppins";
+   font-style: italic;
+   font-weight: 700;
+   src: url("../fonts/Poppins/Poppins-BoldItalic.ttf");
+}
